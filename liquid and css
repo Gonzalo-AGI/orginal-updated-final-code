@@ -349,7 +349,7 @@
 
  const sheepPercent = total ? Math.round((sheep / total) * 100) : 0;
 
- const love_birdPercent = total ? Math.round((renacida / total) * 100) : 0;
+ const love_birdPercent = total ? Math.round((love_bird / total) * 100) : 0;
 
  const owlPercent = total ? Math.round((owl / total) * 100) : 0;
 
