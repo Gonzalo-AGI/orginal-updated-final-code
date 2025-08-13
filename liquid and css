@@ -69,15 +69,14 @@
 
    }
 
- #bar-legendaria { background: #f25c3c; }
+ #bar-sheep { background: #0169a7; }
 
- #bar-renacida { background: #ff7a59; }
+ #bar-love_bird { background: #dfeb05; }
 
- #bar-visionaria { background: #f2cc3c; }
+ #bar-owl { background: #049109; }
 
- #bar-constructora { background: #3c9df2; }
+ #bar-rhino { background: #db1304; }
 
- #bar-encaminada { background: #a68dff; }
  
   .summary-text {
 
@@ -199,7 +198,7 @@
 
    background-color: #e94e77; /* fallback base color */
 
-   background-image: linear-gradient(135deg, #e94e77, #9b5de5);
+   background-image: linear-gradient(135deg, #0169a7, #005181);
 
    background-size: 200% 200%;
 
@@ -301,30 +300,27 @@
  
 <!-- ✅ Content starts after all styles -->
 <div class="quiz-results">
-<h1> Your Chingona Power Breakdown</h1>
+<h1> Your Animal Personality Breakdown!</h1>
 <h3 id="greeting" class="greeting-text"></h3> <!-- First name greeting here -->
 <h2 id="result-title"></h2> <!-- Dynamic personality type -->
 <p id="result-description" class="summary-text"></p> <!-- Description -->
 <!-- Scores -->
-<p>🔥 Chingona Legendaria: <span id="score-legendaria">0%</span></p>
-<div class="bar-bg"><div class="bar" id="bar-legendaria"></div></div>
+<p>🐑 Sheep Personality: <span id="score-sheep">0%</span></p>
+<div class="bar-bg"><div class="bar" id="bar-sheep"></div></div>
  
-  <p>💥 Chingona Renacida: <span id="score-renacida">0%</span></p>
-<div class="bar-bg"><div class="bar" id="bar-renacida"></div></div>
+  <p>🦜 Love Bird Personality: <span id="score-love_bird">0%</span></p>
+<div class="bar-bg"><div class="bar" id="bar-love_bird"></div></div>
  
-  <p>💡 Chingona Visionaria: <span id="score-visionaria">0%</span></p>
-<div class="bar-bg"><div class="bar" id="bar-visionaria"></div></div>
+  <p>🦉 Owl Personality: <span id="score-owl">0%</span></p>
+<div class="bar-bg"><div class="bar" id="bar-owl"></div></div>
  
-  <p>📐 Chingona Constructora: <span id="score-constructora">0%</span></p>
-<div class="bar-bg"><div class="bar" id="bar-constructora"></div></div>
- 
-  <p>🚀 Chingona en Camino: <span id="score-encaminada">0%</span></p>
-<div class="bar-bg"><div class="bar" id="bar-encaminada"></div></div>
+  <p>🦏 Rhino Personality: <span id="score-rhino">0%</span></p>
+<div class="bar-bg"><div class="bar" id="bar-rhino"></div></div>
 </div>
  
 <!-- ✅ Buttons -->
 <div class="cta-wrapper">
-<a href="javascript:void(0)" id="cta-btn" class="btn alt-btn animated-cta">RECIBE TU PLAN DE 30 DÍAS</a>
+<a href="javascript:void(0)" id="cta-btn" class="btn alt-btn animated-cta">GET YOUR 30-DAY PLAN</a>
 </div>
  
  
@@ -335,60 +331,52 @@
 
  const params = new URLSearchParams(window.location.search);
 
- const legendaria = parseInt(params.get("legendaria")) || 0;
+ const sheep = parseInt(params.get("sheep")) || 0;
 
- const renacida = parseInt(params.get("renacida")) || 0;
+ const love_bird = parseInt(params.get("love_bird")) || 0;
 
- const visionaria = parseInt(params.get("visionaria")) || 0;
+ const owl = parseInt(params.get("owl")) || 0;
 
- const constructora = parseInt(params.get("constructora")) || 0;
-
- const encaminada = parseInt(params.get("encamino")) || 0;
+ const rhino = parseInt(params.get("rhino")) || 0;
 
  const firstName = params.get("first_name");
  
 // Calculate total
 
- const total = legendaria + renacida + visionaria + constructora + encaminada;
+ const total = sheep + love_bird + owl + rhino;
  
 // Calculate percentages
 
- const legendPercent = total ? Math.round((legendaria / total) * 100) : 0;
+ const sheepPercent = total ? Math.round((sheep / total) * 100) : 0;
 
- const renaPercent = total ? Math.round((renacida / total) * 100) : 0;
+ const love_birdPercent = total ? Math.round((renacida / total) * 100) : 0;
 
- const visioPercent = total ? Math.round((visionaria / total) * 100) : 0;
+ const owlPercent = total ? Math.round((owl / total) * 100) : 0;
 
- const constrPercent = total ? Math.round((constructora / total) * 100) : 0;
-
- const encamPercent = total ? Math.round((encaminada / total) * 100) : 0;
+ const rhinoPercent = total ? Math.round((rhino / total) * 100) : 0;
  
  
   // Update bars and scores (you must create these IDs in HTML)
 
-   document.getElementById("score-legendaria").textContent = legendPercent + "%";
+   document.getElementById("score-sheep").textContent = sheepPercent + "%";
 
-   document.getElementById("bar-legendaria").style.width = legendPercent + "%";
+   document.getElementById("bar-sheep").style.width = sheepPercent + "%";
  
-  document.getElementById("score-renacida").textContent = renaPercent + "%";
+  document.getElementById("score-love_bird").textContent = love_birdPercent + "%";
 
-   document.getElementById("bar-renacida").style.width = renaPercent + "%";
+   document.getElementById("bar-love_bird").style.width = love_birdPercent + "%";
  
-  document.getElementById("score-visionaria").textContent = visioPercent + "%";
+  document.getElementById("score-owl").textContent = owlPercent + "%";
 
-   document.getElementById("bar-visionaria").style.width = visioPercent + "%";
+   document.getElementById("bar-owl").style.width = owlPercent + "%";
  
-  document.getElementById("score-constructora").textContent = constrPercent + "%";
+  document.getElementById("score-rhino").textContent = rhinoPercent + "%";
 
-   document.getElementById("bar-constructora").style.width = constrPercent + "%";
- 
-  document.getElementById("score-encaminada").textContent = encamPercent + "%";
-
-   document.getElementById("bar-encaminada").style.width = encamPercent + "%";
+   document.getElementById("bar-rhino").style.width = rhinoPercent + "%";
  
   // Determine the highest score
 
-   const highest = Math.max(legendaria, renacida, visionaria, constructora, encaminada);
+   const highest = Math.max(sheep, love_bird, owl, rhino);
 
    let resultText = "";
 
@@ -396,47 +384,39 @@
 
    let ctaLink = "";
 
-   let ctaText = "RECIBE TU PLAN DE 30 DÍAS";
+   let ctaText = "GET YOUR 30-DAY PLAN";
  
-if (highest === legendaria) {
+if (highest === sheep) {
 
-   resultText = "🔥 Eres La Chingona Legendaria!";
+   resultText = "🐑 You are a Sheep Leader!";
 
-   resultDesc = "Has hecho lo que otras solo sueñan. Pero ahora, es momento de multiplicar.";
+   resultDesc = "You’ve done what others only dream of. Now it’s time to multiply.";
 
    ctaLink = "https://www.adrianagallardo.com/pages/legendaria";
 
- } else if (highest === renacida) {
+ } else if (highest === love_bird) {
 
-   resultText = "💥 Eres La Chingona Renacida!";
+   resultText = "🦜 You are a Love Bird Leader!";
 
-   resultDesc = "Has renacido más fuerte que nunca. Ahora te toca dominar.";
+   resultDesc = "You’ve risen stronger than ever. Now it’s your time to dominate.";
 
    ctaLink = "https://www.adrianagallardo.com/pages/renacida";
 
- } else if (highest === visionaria) {
+ } else if (highest === owl) {
 
-   resultText = "💡 Eres La Chingona Visionaria!";
+   resultText = "🦉 You are an Owl Leader!";
 
-   resultDesc = "Tienes la visión. Ahora necesitas la estructura para ejecutarla.";
+   resultDesc = "You have the vision. Now you need the structure to execute it.";
 
    ctaLink = "https://www.adrianagallardo.com/pages/visionaria";
 
- } else if (highest === constructora) {
+ } else if (highest === rhino) {
 
-   resultText = "📐 Eres La Chingona Constructora!";
+   resultText = "🦏 You are a Rhino Leader!";
 
-   resultDesc = "Ya estás construyendo. Ahora hazlo a tu manera.";
+   resultDesc = "You’re already building. Now do it your way.";
 
    ctaLink = "https://www.adrianagallardo.com/pages/constructora";
-
- } else if (highest === encaminada) {
-
-   resultText = "🚀 Eres La Chingona En Camino!";
-
-   resultDesc = "Ya no quieres empezar de nuevo. ¡Ahora es momento de terminar!";
-
-   ctaLink = "https://www.adrianagallardo.com/pages/camino";
 
  }
  
@@ -456,7 +436,7 @@ if (highest === legendaria) {
  
   if (firstName) {
 
-     document.getElementById("greeting").innerHTML = `Hola <span class="highlight-name">${firstName}</span>, este es tu poder Chingona 👇`;
+     document.getElementById("greeting").innerHTML = `Hola <span class="highlight-name">${firstName}</span>, here's your Leadership Power 👇`;
 
    }
 
